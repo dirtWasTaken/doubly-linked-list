@@ -18,7 +18,28 @@ void printList(Node* head);
 
 void quickSort(Node* head);
 
+void nodeSeach(Node* ptrSearch, int seachValue);
+
 bool sort = false;
+/********************************************************************************************************************
+seach of the the linked list 
+********************************************************************************************************************/
+void nodeSeach(Node* ptrSeach, int searchValue)
+{
+	if (ptrSeach == NULL)
+		{
+			std::cout << searchValue << " is not in this list \n\n";
+		}
+		else if (ptrSeach->data == searchValue)
+		{
+			std::cout << searchValue << " is in this list \n\n";
+		}
+		else
+		{
+			nodeSeach(ptrSeach->next, searchValue);
+		}
+
+}
 /********************************************************************************************************************
 Swaps two elements of the linked list and used in main
 ********************************************************************************************************************/
@@ -134,6 +155,11 @@ int main()
 
 	std::cout << "Linked list after sorting\n\n";
 	printList(a);
+
+	nodeSeach(a, 14);
+
+
+	nodeSeach(a, 55);
 
 	return 0;
 }
