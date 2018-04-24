@@ -3,16 +3,14 @@
 #include<algorithm>
 #include "Linked_List.h"
 
+
 int main()
 {
-	/********************************************************************************************************************
-	pointer declarations
-	********************************************************************************************************************/
 	
 	Linked_List Linked;
 
 	struct Node *a = NULL;
-
+		
 	Linked.push(&a, 1);
 	Linked.push(&a, 44);
 	Linked.push(&a, 65);
@@ -29,7 +27,6 @@ int main()
 	Linked.printList(a);
 
 	Linked.nodeSeach(a, 14);
-
 
 	Linked.nodeSeach(a, 55);
 
