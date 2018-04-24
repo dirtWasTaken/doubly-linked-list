@@ -1,34 +1,37 @@
-#include <iostream>
-#include <cstdlib>
-#include<algorithm>
+
 #include "Linked_List.h"
+#include <conio.h>
 
 
 int main()
 {
+
+////////////////////////////////////	struct Node *a = NULL;
 	
 	Linked_List Linked;
 
-	struct Node *a = NULL;
-		
-	Linked.push(&a, 1);
-	Linked.push(&a, 44);
-	Linked.push(&a, 65);
-	Linked.push(&a, 14);
-	Linked.push(&a, 34);
-	Linked.push(&a, 10);
+	Linked.pushFront(1);
+	Linked.pushFront(44);
+	Linked.pushFront(65);
+	Linked.pushFront(14);
+	Linked.pushFront(34);
+	Linked.pushFront(10);
 
 	std::cout << "Linked list before sorting\n\n";
-	Linked.printList(a);
 
-	Linked.quickSort(a);
 
-	std::cout << "Linked list after sorting\n\n";
-	Linked.printList(a);
+	Linked.printList();
 
-	Linked.nodeSeach(a, 14);
+	//Linked.quickSort(a);
 
-	Linked.nodeSeach(a, 55);
+	//std::cout << "Linked list after sorting\n\n";
+	//Linked.printList(a);
+
+	//Linked.nodeSeach(a, 14);
+
+	//Linked.nodeSeach(a, 55);
+
+	_getch();
 
 	return 0;
 }

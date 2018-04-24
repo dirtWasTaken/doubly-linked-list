@@ -1,6 +1,4 @@
-#include <iostream>
-#include <cstdlib>
-#include<algorithm>
+
 #include "Linked_List.h"
 
 
@@ -15,6 +13,34 @@ Linked_List::~Linked_List()
 {
 }
 
+
+
+/********************************************************************************************************************
+
+********************************************************************************************************************/
+void Linked_List::pushFront(int new_data)
+{
+	struct Node* new_node = new Node;
+	new_node->data = new_data;
+
+	if (m_head == NULL)
+	{
+		// First node in the list
+		new_node->next = nullptr;
+		new_node->prev = nullptr;
+		m_head = new_node;
+		m_tail = new_node;
+	}
+	else
+	{
+		// All subsequent nodes
+		new_node->next = m_head;
+		new_node->prev = nullptr;
+		m_head->prev = new_node;
+		m_head = new_node;
+	}
+
+}
 /********************************************************************************************************************
 seach of the the linked list
 ********************************************************************************************************************/
@@ -57,9 +83,9 @@ void Linked_List::_quickSort(struct Node* l, struct Node* h)
 /********************************************************************************************************************
 
 ********************************************************************************************************************/
-void Linked_List::printList(Node* head)
+void Linked_List::printList()
 {
-	Node * temp = head;
+	Node * temp = m_head;
 	while (temp != NULL)
 	{
 		std::cout << temp->data << " ";
@@ -71,28 +97,12 @@ void Linked_List::printList(Node* head)
 
 ********************************************************************************************************************/
 // The main function to sort a linked list. It mainly calls _quickSort()
-void Linked_List::quickSort(struct Node *head)
+void Linked_List::quickSort()
 {
 	// Find last node
-	struct Node *h = lastNode(head);
+	struct Node *h = lastNode(m_head);
 
 	// Call the recursive QuickSort
-	_quickSort(head, h);
+	_quickSort(m_head, h);
 }
 
-/********************************************************************************************************************
-
-********************************************************************************************************************/
-void Linked_List::push(struct Node** head_ref, int new_data)
-{
-	struct Node* new_node = new Node;
-	new_node->data = new_data;
-
-	new_node->prev = NULL;
-
-	new_node->next = (*head_ref);
-
-	if ((*head_ref) != NULL) (*head_ref)->prev = new_node;
-
-	(*head_ref) = new_node;
-}
