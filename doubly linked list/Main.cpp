@@ -8,7 +8,7 @@ int main()
 
 ////////////////////////////////////	struct Node *a = NULL;
 	
-	Linked_List Linked;
+	Linked_List<int> Linked;
 
 	Linked.pushFront(1);
 	Linked.pushFront(44);
@@ -22,14 +22,15 @@ int main()
 
 	Linked.printList();
 
-	//Linked.quickSort(a);
+	Linked.quickSort();
 
-	//std::cout << "Linked list after sorting\n\n";
-	//Linked.printList(a);
+	std::cout << "After sorting\n\n";
 
-	//Linked.nodeSeach(a, 14);
+	Linked.printList();
 
-	//Linked.nodeSeach(a, 55);
+	Linked.nodeSeach(14);
+
+	Linked.nodeSeach(55);
 
 	_getch();
 
