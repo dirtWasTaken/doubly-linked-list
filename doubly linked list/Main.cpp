@@ -28,8 +28,6 @@ int main()
 
 	Linked.printList();
 
-	Linked.nodeSeach(14);
-
 	Linked.nodeSeach(55);
 
 	_getch();

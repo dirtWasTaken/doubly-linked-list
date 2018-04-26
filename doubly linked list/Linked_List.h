@@ -22,7 +22,7 @@ public:
 	{
 		Node() {}
 		Node(int number) { data = number; }
-		int data = 0;
+		T_ data = 0;
 /////////////////////////		T_ data;
 		Node* next = nullptr;
 		Node* prev = nullptr;
@@ -93,24 +93,27 @@ public:
 	********************************************************************************************************************/
 	void nodeSeach(int searchValue)
 	{
-		if (m_head == NULL)
+		struct Node * searchptr = m_head;
+
+
+		while (searchptr != NULL)
 		{
-			std::cout << searchValue << " is not in this list \n\n";
-		}
-		else if (m_head->data == searchValue)
-		{
-			std::cout << searchValue << " is in this list \n\n";
-		}
-		else
-		{
-			while (m_head != NULL)
+			if (searchptr->data == searchValue)
 			{
-				nodeSeach(searchValue);
-				m_head->next;
+				std::cout << searchValue << " is in this list \n\n";
+				break;
+			}
+			else
+			{
+				(searchptr = searchptr->next);
 			}
 		}
-
+		if (searchptr == NULL)
+			{
+				std::cout << searchValue << " is not in this list \n\n";
+			}
 	}
+	
 	/********************************************************************************************************************
 	Swaps two elements of the linked list and used in main
 	********************************************************************************************************************/
@@ -156,20 +159,6 @@ public:
 		// Call the recursive QuickSort
 		_quickSort(m_head, h);
 	}
-	/********************************************************************************************************************
-	function definitions 
-	********************************************************************************************************************/
-	void printList();
-
-	void quickSort();
-
-	void nodeSeach(int seachValue);
-
-	void swap(int* a, int* b);
-
-	void pushFront(int new_data);
-
-	void _quickSort(struct Node* L, struct Node* h);
 
 	bool sort = false;
 
