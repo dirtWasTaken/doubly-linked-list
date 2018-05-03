@@ -30,6 +30,8 @@ int main()
 
 	Linked.nodeSeach(55);
 
+	Linked.nodeSeach(14);
+
 	_getch();
 
 	return 0;

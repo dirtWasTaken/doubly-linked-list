@@ -23,7 +23,6 @@ public:
 		Node() {}
 		Node(int number) { data = number; }
 		T_ data = 0;
-/////////////////////////		T_ data;
 		Node* next = nullptr;
 		Node* prev = nullptr;
 	};
