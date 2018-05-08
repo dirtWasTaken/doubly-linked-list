@@ -62,7 +62,8 @@ public:
 	}
 
 	/********************************************************************************************************************
-
+	uses the value the pushFront function call in main and inserts it into the linked list, if it's the first value,
+	it assigns that as the head pointer otherwise subsequent values are inserted sequentially into the list.
 	********************************************************************************************************************/
 	void pushFront(int new_data)
 	{
@@ -134,7 +135,7 @@ public:
 		}
 	}
 	/********************************************************************************************************************
-
+	printing function 
 	********************************************************************************************************************/
 	void printList()
 	{
@@ -147,9 +148,8 @@ public:
 		std::cout << "\n\n";
 	}
 	/********************************************************************************************************************
-
+	The main function to sort a linked list. It mainly calls _quickSort
 	********************************************************************************************************************/
-	// The main function to sort a linked list. It mainly calls _quickSort()
 	void quickSort()
 	{
 		// Find last node
@@ -159,9 +159,14 @@ public:
 		_quickSort(m_head, h);
 	}
 
+
 	bool sort = false;
 
 private:
+
+	/*************************************************************************************
+	Head a tail pointer declarations
+	**************************************************************************************/
 	Node *m_head = nullptr;
 	Node *m_tail = nullptr;
 };
